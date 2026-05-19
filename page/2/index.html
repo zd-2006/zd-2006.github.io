@@ -77,6 +77,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot配置环境入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/12/11/springboot%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%85%A5%E9%97%A8/" class="article-date">
+  <time class="dt-published" datetime="2025-12-11T12:06:18.000Z" itemprop="datePublished">2025-12-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/12/11/springboot%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%85%A5%E9%97%A8/">springboot配置环境入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h2><ol>
+<li>如果是自己创建的springboot项目，需要在pom.xml中添加依赖包。</li>
+<li>idea自动创建的不用</li>
+</ol>
+<h2 id="配置文件（在resources下）"><a href="#配置文件（在resources下）" class="headerlink" title="配置文件（在resources下）"></a>配置文件（在resources下）</h2><ol>
+<li>application.properties文件</li>
+<li>application.yml文件（层级清晰）</li>
+</ol>
+<h2 id="获取配置信息"><a href="#获取配置信息" class="headerlink" title="获取配置信息"></a>获取配置信息</h2><ol>
+<li>@Value注解（只能获取一个）</li>
+<li>@ConfigurationProperties注解（可以获取多个）</li>
+</ol>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ol>
+<li>启动类启动以后，会从配置文件中读取配置信息，并将其注入到Spring的IOC容器中。</li>
+<li>@Value注解和@ConfigurationProperties注解的原理都是一样的，都是从Spring的IOC容器中获取配置信息。</li>
+<li>然后类再运作起来。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/12/11/springboot%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%85%A5%E9%97%A8/" data-id="cuidGEcGG7NKr972XCHbyxegz" data-title="springboot配置环境入门" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-springboot入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/12/11/springboot%E5%85%A5%E9%97%A8/" class="article-date">
@@ -414,6 +471,10 @@
       <ul>
         
           <li>
+            <a href="/2026/05/19/redis/">redis</a>
+          </li>
+        
+          <li>
             <a href="/2026/05/17/sprintboot/">sprintboot</a>
           </li>
         
@@ -427,10 +488,6 @@
         
           <li>
             <a href="/2025/12/27/IP/">IP</a>
-          </li>
-        
-          <li>
-            <a href="/2025/12/25/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%89%E8%A6%81%E7%B4%A0/">网络编程三要素</a>
           </li>
         
       </ul>
