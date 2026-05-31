@@ -14,7 +14,7 @@
 <meta property="og:description" content="1.微信小程序微信登录三个步骤1.小程序调用登录api,wx.login()从微信服务器获取code(确定登录的微信号)2.小程序发送带有code的文件到开发者服务端,开发者服务端把code+appid+secret请求微信 jscode2session 接口(确定登录的微信号和小程序,因为appid和secret是后端开发人的)3.微信服务器返回openid和session_key,后端保存4.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-30T03:42:33.574Z">
-<meta property="article:modified_time" content="2026-05-30T03:42:33.575Z">
+<meta property="article:modified_time" content="2026-05-30T05:28:28.823Z">
 <meta property="article:author" content="ad">
 <meta name="twitter:card" content="summary">
   
@@ -90,7 +90,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>1.微信小程序微信登录<br>三个步骤<br>1.小程序调用登录api,wx.login()从微信服务器获取code(确定登录的微信号)<br>2.小程序发送带有code的文件到开发者服务端,开发者服务端把code+appid+secret请求微信 jscode2session 接口(确定登录的微信号和小程序,因为appid和secret是后端开发人的)<br>3.微信服务器返回openid和session_key,后端保存<br>4.后端拿到openid和session_key,生成token，返回给小程序,小程序保存到本地storage,后续携带token</p>
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">小程序                         开发者后端                      微信服务器</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │── wx.login() ──────────────────────────────────────────────→│</span><br><span class="line">  │←─────────────── code ─────────────────────────────────────│</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │── code ──────────────────────→│                              │</span><br><span class="line">  │                               │── appid+secret+code ────────→│</span><br><span class="line">  │                               │←── openid + session_key ────│</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │                               │  生成 token                   │</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │←── token ─────────────────────│                              │</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │  后续请求带 token              │                              │</span><br></pre></td></tr></table></figure>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">小程序                         开发者后端                      微信服务器</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │── wx.login() ──────────────────────────────────────────────→│</span><br><span class="line">  │←─────────────── code ─────────────────────────────────────│</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │── code ──────────────────────→│                              │</span><br><span class="line">  │                               │── appid+secret-key+code ────────→│</span><br><span class="line">  │                               │←── openid + session_key ────│</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │                               │  生成 token                   │</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │←── token ─────────────────────│                              │</span><br><span class="line">  │                               │                              │</span><br><span class="line">  │  后续请求带 token              │                              │</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -105,10 +105,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2026/05/30/%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82http/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
-    <a href="/2026/05/27/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2026/05/30/fork%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">未命名笔记</div>
+      <div class="article-nav-title">fork函数</div>
     </a>
   
 </nav>
@@ -128,7 +137,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E6%95%99%E7%A8%8B/" rel="tag">Hexo教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaSpringboot/" rel="tag">javaSpringboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="tag">学习记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%A1%91%E5%A4%A7%E8%84%91/" rel="tag">重塑大脑</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E6%95%99%E7%A8%8B/" rel="tag">Hexo教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaSpringboot/" rel="tag">javaSpringboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="tag">学习记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E7%A8%8B/" rel="tag">进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%A1%91%E5%A4%A7%E8%84%91/" rel="tag">重塑大脑</a></li></ul>
     </div>
   </div>
 
@@ -138,7 +147,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 10px;">Hexo教程</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javaSpringboot/" style="font-size: 10px;">javaSpringboot</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 10px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">学习记录</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 20px;">网络编程</a> <a href="/tags/%E9%87%8D%E5%A1%91%E5%A4%A7%E8%84%91/" style="font-size: 10px;">重塑大脑</a>
+      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 10px;">Hexo教程</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javaSpringboot/" style="font-size: 10px;">javaSpringboot</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 10px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">学习记录</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 20px;">网络编程</a> <a href="/tags/%E8%BF%9B%E7%A8%8B/" style="font-size: 10px;">进程</a> <a href="/tags/%E9%87%8D%E5%A1%91%E5%A4%A7%E8%84%91/" style="font-size: 10px;">重塑大脑</a>
     </div>
   </div>
 
@@ -160,23 +169,23 @@
       <ul>
         
           <li>
+            <a href="/2026/05/31/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96redis%E4%BD%BF%E7%94%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/31/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%AC%94%E8%AE%B0/">未命名笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/30/mybatis/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/30/%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82http/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2026/05/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2026/05/27/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%AC%94%E8%AE%B0/">未命名笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2026/05/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
-          </li>
-        
-          <li>
-            <a href="/2026/05/19/redis/">redis</a>
-          </li>
-        
-          <li>
-            <a href="/2026/05/17/sprintboot/">sprintboot</a>
           </li>
         
       </ul>
